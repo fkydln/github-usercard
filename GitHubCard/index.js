@@ -1,8 +1,19 @@
+import axios from 'axios';
 /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
 */
+const axiosPromise = axios.get('https://api.github.com/users/fkydln')
+
+.then((r)=>{
+  console.log("success!",);
+  console.log(r.data.bio);
+  var getData = r.data;
+  return getData;
+})
+
+console.log(getData);
 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
@@ -49,7 +60,21 @@ const followersArray = [];
       </div>
     </div>
 */
+const structure = function() {
+  const divCreator = document.createElement('div');
+  const imgCreator = document.createElement('img');
+  const h3Creator = document.createElement('h3');
+  const pCreator = document.createElement('p');
+  const aCreator = document.createElement('a');
 
+  divCreator.classList.add('card')
+  imgCreator.setAttribute("src", "")
+
+  document.body.appendChild(divCreator)
+  document.getElementsByClassName('card')[0].appendChild(imgCreator);
+}
+
+structure();
 /*
   List of LS Instructors Github username's:
     tetondan
